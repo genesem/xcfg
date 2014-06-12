@@ -9,6 +9,9 @@ Simple shell scripts to manage ~nginx virtual hosts~ under debian/ubuntu platfor
 wget https://raw.githubusercontent.com/genesem/xcfg/master/mksite.sh
 chmod 766 mksite.sh
 ```
+*or in single line:*
+```wget https://raw.githubusercontent.com/genesem/xcfg/master/mksite.sh && chmod 766 mksite.sh
+```
 
 
 ####Usage:

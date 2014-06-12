@@ -63,6 +63,11 @@ server {
     access_log  off;
     error_log  /var/www/$1/logs/error.log notice;
 
+    # static file 404's aren't logged and expires header is set to maximum age
+    location ~* \.(jpg|jpeg|gif|css|png|js|ico)$ {
+    	access_log off;
+	expires max;
+    }
 
 #This is catch all to /index.php and used in most php cms like codeigniter.
 #location / {

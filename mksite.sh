@@ -63,11 +63,24 @@ server {
     access_log  off;
     error_log  /var/www/$1/logs/error.log notice;
 
-location / {
-	try_files $uri $uri/ /index.php;
-        include /etc/nginx/proxy_params;
-	}
 
+#This is catch all to /index.php and used in most php cms like codeigniter.
+#location / {
+#	try_files $uri $uri/ /index.php;
+#        include /etc/nginx/proxy_params;
+#	}
+
+#This block is used to process php via php5-fpm.sock
+#location ~ \.php$ {
+#  try_files $uri =404;
+#  fastcgi_split_path_info ^(.+.php)(/.+)$;
+#  fastcgi_pass unix:/var/run/php5-fpm.sock;  
+#  fastcgi_index index.php; include fastcgi_params;
+#  fastcgi_read_timeout 120;
+#}
+
+
+#Exatra configs
 #include /etc/nginx/security; 
 #include /etc/nginx/main_rules;
 
@@ -81,5 +94,15 @@ ln -s /etc/nginx/sites-a*/$1 /etc/nginx/sites-e*/
 service nginx reload
 
 echo ""
-echo "$1 website was created, don't forget to set DNS records."
+echo "$1 website was created, don't forget to set DNS records. And read the docs at:"
 echo ""
+
+
+cat <<-ENDX
+
+ $1 website was created.
+ Don't forget to set DNS records for your new website.
+ Please read the docs at:
+ https://github.com/genesem/xcfg
+
+ENDX

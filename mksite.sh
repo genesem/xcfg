@@ -9,9 +9,9 @@
 if [ -z "$1" ]
 then
 cat <<-ENDX
-	"Make website for nginx by genesem."
-	"Usage: `basename $0` domain_name.tld"
-	"see: https://github.com/genesem/xcfg"
+	 Make website for nginx by genesem.
+	 Usage: `basename $0` domain_name.tld
+	 see: https://github.com/genesem/xcfg
 ENDX
 	exit 85
 fi  

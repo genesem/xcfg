@@ -1,24 +1,25 @@
 xcfg
 ====
 
-Simple shell scripts to manage nginx under debian/ubuntu platforms.
+Simple shell scripts to manage ~nginx virtual hosts~ under debian/ubuntu platforms.
 
 ####Install:
 *First you need to download it and set permission to run under the linux box:*
 ```
-wget xxxxx
+wget https://raw.githubusercontent.com/genesem/xcfg/master/mksite.sh
 chmod 766 mksite.sh
-
 ```
 
 
 ####Usage:
-run it site the domain name as single parameter.
-```
-./mksite your-domain-name.tld
+Run the script with the domain name as single parameter.
+Nginx should be installed properly.
 
 ```
-*exampe:* ```./mksite realblog.org```
+./mksite.sh your-domain-name.tld
+
+```
+*exampe:* ```./mksite.sh realblog.org```
 
 
 

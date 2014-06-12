@@ -1,13 +1,19 @@
 #!/bin/bash
 
 ##
-## Make website for nginx
+## Make website for nginx by genesem
+##
+## For more information please visit: https://github.com/genesem/xcfg
 ##
 
 if [ -z "$1" ]
 then
-  echo "Usage: `basename $0` domain_name.tld"
-  exit 85
+cat <<-ENDX
+	"Make website for nginx by genesem."
+	"Usage: `basename $0` domain_name.tld"
+	"see: https://github.com/genesem/xcfg"
+ENDX
+	exit 85
 fi  
 
 echo "mk dir's"

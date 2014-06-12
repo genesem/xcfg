@@ -27,6 +27,11 @@ Nginx should be installed properly.
 ```
 *exampe:* ```./mksite.sh realblog.org```
 
-
-
-
+-----
+####What it does and how:
+1. It creates directory structure for your new website in the `/var/www` as base folder.
+It uses command: `mkdir -p -v /var/www/$1/{htdocs,logs}`.
+So you having www root of your site in the `/var/www/sitename.tld/htdocs/` and error log file in the `/var/www/sitename.ext/logs/`.
+1. It makes stub `index.html` file in the www root of this new web site.
+1. Change ownership of that: `chown -R www-data:www-data` 
+1. New site config is placed to `/etc/nginx/sites-available/sitename.ext` file. Your can review this config by command:`nano /etc/nginx/sites-available/sitename.ext`.

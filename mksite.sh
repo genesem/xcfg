@@ -98,11 +98,6 @@ ln -s /etc/nginx/sites-a*/$1 /etc/nginx/sites-e*/
 
 service nginx reload
 
-echo ""
-echo "$1 website was created, don't forget to set DNS records. And read the docs at:"
-echo ""
-
-
 cat <<-ENDX
 
  $1 website was created.

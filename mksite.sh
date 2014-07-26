@@ -85,9 +85,13 @@ server {
 #}
 
 
-#Exatra configs
+#Extra conf:
+
 #include /etc/nginx/security; 
 #include /etc/nginx/main_rules;
+
+#location = /robots.txt  { alias /var/www/_all/robots.txt; }
+#location = /favicon.ico { alias /var/www/_all/favicon.ico; }
 
 }
 
@@ -100,9 +104,8 @@ service nginx reload
 
 cat <<-ENDX
 
- $1 website was created.
+ $1 web site was created.
  Don't forget to set DNS records for your new website.
- Please read the docs at:
- https://github.com/genesem/xcfg
+ Please read docs: https://github.com/genesem/xcfg
 
 ENDX

@@ -64,10 +64,15 @@ server {
     error_log  /var/www/$1/logs/error.log notice;
 
     # static file 404's aren't logged and expires header is set to maximum age
-    location ~* \.(jpg|jpeg|gif|css|png|js|ico)$ {
+    location ~* \.(jpg|gif|css|png|js|ico|txt)$ {
     	access_log off;
 	expires max;
     }
+
+#  location = /favicon.ico { alias /var/www/_all/favicon.ico; }
+   location = /robots.txt {
+	return 200 "User-agent: *\nDisallow: "; }
+
 
 #This is catch all to /index.php and used in most php cms like codeigniter.
 #location / {
@@ -89,15 +94,6 @@ server {
 #include /etc/nginx/security; 
 #include /etc/nginx/main_rules;
 
-#location = /favicon.ico { 
-#	error_log off;
-#	alias /var/www/_all/favicon.ico; }
-
-location = /robots.txt {
-	error_log off;
-    	access_log off;
-	return 200 "User-agent: *\nDisallow: "; }
-}
 
 ENDX
 

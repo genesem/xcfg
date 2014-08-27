@@ -41,7 +41,7 @@ background-color: #0094d0;
 <p>This is stub page with standard "lorem ipsum" stub.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 <hr/>
-<p>&copy; 2014 <a href="http://jetstat.com/">jetstat.com</a></p>
+<p>&copy; 2014 <a href="http://footmedia.com/">footmedia.com</a></p>
 </body>
 </html>
 
@@ -86,13 +86,17 @@ server {
 
 
 #Extra conf:
-
 #include /etc/nginx/security; 
 #include /etc/nginx/main_rules;
 
-#location = /robots.txt  { alias /var/www/_all/robots.txt; }
-#location = /favicon.ico { alias /var/www/_all/favicon.ico; }
+#location = /favicon.ico { 
+#	error_log off;
+#	alias /var/www/_all/favicon.ico; }
 
+location = /robots.txt {
+	error_log off;
+    	access_log off;
+	return 200 "User-agent: *\nDisallow: "; }
 }
 
 ENDX

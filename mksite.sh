@@ -93,6 +93,7 @@ server {
 #Extra conf:
 #include /etc/nginx/security; 
 #include /etc/nginx/main_rules;
+
 }
 
 ENDX

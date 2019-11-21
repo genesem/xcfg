@@ -3,7 +3,7 @@ xcfg
 
 Simple shell scripts to manage ~nginx virtual hosts~ under debian/ubuntu platforms.
 
-####Install:
+#### Install:
 *First you need to download it and set permission to run under the linux box:*
 ```
 wget https://raw.githubusercontent.com/genesem/xcfg/master/mksite.sh
@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/genesem/xcfg/master/mksite.sh && chmod 76
 ```
 
 
-####Usage:
+#### Usage:
 Run the script with the domain name as single parameter.
 Nginx should be installed properly.
 
@@ -28,7 +28,7 @@ Nginx should be installed properly.
 *exampe:* ```./mksite.sh realblog.org```
 
 -----
-####What it does and how:
+#### What it does and how:
 1. It creates directory structure for your new website in the `/var/www` as base folder.
 It uses command: `mkdir -p -v /var/www/$1/{htdocs,logs}`.
 So you having www root of your site in the `/var/www/sitename.tld/htdocs/` and error log file in the `/var/www/sitename.ext/logs/`.

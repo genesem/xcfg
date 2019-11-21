@@ -1,7 +1,7 @@
 xcfg
 ====
 
-Simple shell scripts to manage ~nginx virtual hosts~ under debian/ubuntu platforms.
+Simple shell scripts to manage nginx virtual hosts under debian/ubuntu platforms.
 
 #### Install:
 *First you need to download it and set permission to run under the linux box:*
